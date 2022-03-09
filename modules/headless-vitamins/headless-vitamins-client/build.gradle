@@ -1,3 +1,14 @@
 dependencies {
-	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileOnly group: "com.liferay.portal", name: "release.portal.api",version: "7.4.3.14-ga14"
 }
+
+
+/*
+dependencies {
+    compileOnly group: "com.liferay", name: "javax.xml.bind"
+    compileOnly group: "javax.annotation", name: "javax.annotation-api", version: "1.3.2"
+}
+
+uploadArchives {
+    enabled true
+}*/

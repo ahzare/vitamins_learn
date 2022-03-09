@@ -1,4 +1,0 @@
-Bundle-Name: headless-vitamins-test
-Bundle-SymbolicName: com.dnebinger.headless.vitamins
-Bundle-Version: 1.0.0
-Export-Package: com.dnebinger.headless.vitamins.api
