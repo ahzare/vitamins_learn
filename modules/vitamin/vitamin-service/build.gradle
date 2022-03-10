@@ -1,0 +1,27 @@
+dependencies {
+	compile project(":modules:vitamin:vitamin-api")
+
+//	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileOnly group: "com.liferay.portal", name: "release.portal.api" , version: "7.3.7-ga8"
+//	compileOnly group: "com.liferay.portal", name: "release.portal.api" , version: "7.4.3.14-ga14"
+
+	compileOnly group: "com.liferay", name: "com.liferay.petra.lang"
+	compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "4.0.3"
+	compileOnly group: "com.liferay", name: "com.liferay.portal.aop.api"
+	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"/*, version: "9.5.0"*/
+	compileOnly group: "com.liferay", name: "com.liferay.petra.function", version: "4.0.3"
+	compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version: "4.3.4"
+	compileOnly group: "com.liferay", name: "com.liferay.portal.search.api", version: "4.19.0"
+	compileOnly group: "org.slf4j", name: "slf4j-api"
+	compileOnly group: "commons-lang", name: "commons-lang"
+	compileOnly group: "org.osgi", name: "org.osgi.annotation.versioning"
+	compileOnly group: "org.osgi", name: "org.osgi.core"
+	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations"
+
+}
+
+buildService {
+	apiDir = "../vitamin-api/src/main/java"
+}
+
+group = "com.denbinger.vitamins"

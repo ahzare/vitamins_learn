@@ -1,14 +1,13 @@
 package com.dnebinger.headless.vitamins.internal.resource.v1_0;
 
-//import com.denbinger.vitamins.constants.PersistedVitaminType;
-//import com.denbinger.vitamins.model.PersistedVitamin;
-//import com.denbinger.vitamins.model.VitaminDetail;
-//import com.denbinger.vitamins.service.PersistedVitaminService;
+import com.denbinger.vitamins.constants.PersistedVitaminType;
+import com.denbinger.vitamins.model.PersistedVitamin;
+import com.denbinger.vitamins.model.VitaminDetail;
+import com.denbinger.vitamins.service.PersistedVitaminService;
 import com.dnebinger.headless.vitamins.dto.v1_0.Vitamin;
-//import com.dnebinger.headless.vitamins.internal.odata.entity.v1_0.VitaminEntityModel;
-//import com.dnebinger.headless.vitamins.internal.util.CreatorUtil;
+import com.dnebinger.headless.vitamins.internal.odata.entity.v1_0.VitaminEntityModel;
+import com.dnebinger.headless.vitamins.internal.util.CreatorUtil;
 import com.dnebinger.headless.vitamins.resource.v1_0.VitaminResource;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.search.Sort;
 import com.liferay.portal.kernel.search.filter.Filter;
@@ -21,8 +20,6 @@ import com.liferay.portal.kernel.util.Portal;
 import com.liferay.portal.odata.entity.EntityModel;
 import com.liferay.portal.vulcan.pagination.Page;
 import com.liferay.portal.vulcan.pagination.Pagination;
-import com.liferay.portal.vulcan.resource.EntityModelResource;
-import com.liferay.portal.vulcan.util.SearchUtil;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ServiceScope;
@@ -47,8 +44,8 @@ public class VitaminResourceImpl extends BaseVitaminResourceImpl {
     private Portal portal;
     @Reference
     private UserLocalService userLocalService;
-    /*@Reference
-    private PersistedVitaminService persistedVitaminService;*/
+    @Reference
+    private PersistedVitaminService persistedVitaminService;
     private static final Logger _log =
             LoggerFactory.getLogger(VitaminResourceImpl.class);
 
@@ -64,7 +61,7 @@ public class VitaminResourceImpl extends BaseVitaminResourceImpl {
         return serviceContext;
     }
 
-    /*protected int _toTypeCode(final Vitamin.Type type) {
+    protected int _toTypeCode(final Vitamin.Type type) {
         if (type == null)
             return PersistedVitaminType.OTHER;
         switch (type) {
@@ -171,6 +168,7 @@ public class VitaminResourceImpl extends BaseVitaminResourceImpl {
 
     @Override
     public Vitamin postVitamin(Vitamin v) throws Exception {
+        System.out.println("postVitamin");
         if (_log.isDebugEnabled()) {
             _log.debug("Need to create a new vitamin: %s\n", v.toString());
         }
@@ -217,5 +215,5 @@ public class VitaminResourceImpl extends BaseVitaminResourceImpl {
             _log.error("Error putting vitamin: " + e.getMessage(), e);
             throw e;
         }
-    }*/
+    }
 }
